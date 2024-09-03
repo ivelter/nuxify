@@ -2,105 +2,69 @@ export default function (videoTitle: string, usedAsReference: boolean = false) {
 
     let newVideoTitle = videoTitle
 
-        // J'ai -> Nous avons
-        .replace(/\bJ'ai\b/g, 'Nous avons')
-        .replace(/\bJ'AI\b/g, 'NOUS AVONS')
-        .replace(/\bj'ai\b/gi, 'nous avons')
+        // J'ai -> On a
+        .replace(/\bJ'ai\b/g, 'On a')
+        .replace(/\bJ'AI\b/g, 'ON A')
+        .replace(/\bj'ai\b/gi, 'on a')
 
-        // Je vous ai -> Nous vous avons
-        .replace(/\bJe vous ai\b/g, 'Nous vous avons')
-        .replace(/\bJE VOUS AI\b/g, 'NOUS VOUS AVONS')
-        .replace(/\bje vous ai\b/gi, 'nous vous avons')
+        // Je vous ai -> On vous a
+        .replace(/\bJe vous ai\b/g, 'On vous a')
+        .replace(/\bJE VOUS AI\b/g, 'ON VOUS A')
+        .replace(/\bje vous ai\b/gi, 'on vous a')
 
-        // Je suis -> Nous sommes
-        .replace(/\bJe suis\b/g, 'Nous sommes')
-        .replace(/\bJE SUIS\b/g, 'NOUS SOMMES')
-        .replace(/\bje suis\b/gi, 'nous sommes')
+        // Je suis -> On est
+        .replace(/\bJe suis\b/g, 'On est')
+        .replace(/\bJE SUIS\b/g, 'ON EST')
+        .replace(/\bje suis\b/gi, 'on est')
 
-        // Je me suis -> Nous nous sommes
-        .replace(/\bJe me suis\b/g, 'Nous nous sommes')
-        .replace(/\bJE ME SUIS\b/g, 'NOUS NOUS SOMMES')
-        .replace(/\bje me suis\b/gi, 'nous nous sommes')
+        // Je me suis -> On s'est
+        .replace(/\bJe me suis\b/g, 'On s\'est')
+        .replace(/\bJE ME SUIS\b/g, 'ON S\'EST')
+        .replace(/\bje me suis\b/gi, 'on s\'est')
 
         // Je pack -> on pack (???)
         .replace(/\bJe pack\b/g, 'On pack')
         .replace(/\bJE PACK\b/g, 'ON PACK')
         .replace(/\bje pack\b/gi, 'on pack')
 
-        // Je test/je teste -> nous testons
-        .replace(/\bJe test\b/g, 'Nous testons')
-        .replace(/\bJe teste\b/g, 'Nous testons')
-        .replace(/\bJE TEST\b/g, 'NOUS TESTONS')
-        .replace(/\bJE TESTE\b/g, 'NOUS TESTONS')
-        .replace(/\bje test\b/gi, 'nous testons')
-        .replace(/\bje teste\b/gi, 'nous testons')
+        // J' -> On [+ espace]
+        .replace(/\bJ'\b/g, 'On ')
+        .replace(/\bj’\b/g, 'on ')
 
-        // J'arrête -> nous arrêtons
-        .replace(/\bj'arrête\b/g, 'nous arrêtons')
-        .replace(/\bJ'arrête\b/g, 'Nous arrêtons')
-        .replace(/\bJ'ARRÊTE\b/g, 'NOUS ARRÊTONS')
+        // Je vais -> On va
+        .replace(/\bJe vais\b/g, 'On va')
+        .replace(/\bJE VAIS\b/g, 'ON VA')
+        .replace(/\bje vais\b/gi, 'on va')
 
-        // J'achète -> nous achetons
-        .replace(/\bJ'achète\b/g, 'Nous achetons')
-        .replace(/\bJ'ACHÈTE\b/g, 'NOUS ACHETONS')
-        .replace(/\bj'achète\b/g, 'nous achetons')
+        // Je fais -> On fait
+        .replace(/\bJe fais\b/g, 'On fait')
+        .replace(/\bJE FAIS\b/g, 'ON FAIT')
+        .replace(/\bje fais\b/gi, 'on fait')
 
-        // Je vais -> Nous allons
-        .replace(/\bJe vais\b/g, 'Nous allons')
-        .replace(/\bJE VAIS\b/g, 'NOUS ALLONS')
-        .replace(/\bje vais\b/gi, 'nous allons')
+        // Je veux -> On veut
+        .replace(/\bJe veux\b/g, 'On veut')
+        .replace(/\bJE VEUX\b/g, 'ON VEUT')
+        .replace(/\bje veux\b/gi, 'on veut')
 
-        // Je fais -> Nous faisons
-        .replace(/\bJe fais\b/g, 'Nous faisons')
-        .replace(/\bJE FAIS\b/g, 'NOUS FAISONS')
-        .replace(/\bje fais\b/gi, 'nous faisons')
+        // Je vous montre -> On vous montre
+        .replace(/\bJe vous montre\b/g, 'On vous montre')
+        .replace(/\bJE VOUS MONTRE\b/g, 'ON VOUS MONTRE')
+        .replace(/\bje vous montre\b/gi, 'on vous montre')
 
-        // Je veux -> Nous voulons
-        .replace(/\bJe veux\b/g, 'Nous voulons')
-        .replace(/\bJE VEUX\b/g, 'NOUS VOULONS')
-        .replace(/\bje veux\b/gi, 'nous voulons')
+        // Je réagis -> On réagit
+        .replace(/\bJe réagis\b/g, 'On réagit')
+        .replace(/\bJE RÉAGIS\b/g, 'ON RÉAGIT')
+        .replace(/\bje réagis\b/gi, 'on réagit')
 
-        // Je pense -> Nous pensons
-        .replace(/\bJe pense\b/g, 'Nous pensons')
-        .replace(/\bJE PENSE\b/g, 'NOUS PENSONS')
-        .replace(/\bje pense\b/gi, 'nous pensons')
+        // Mon -> Notre
+        .replace(/\bMon\b/g, 'Notre')
+        .replace(/\bMON\b/g, 'NOTRE')
+        .replace(/\bmon\b/g, 'notre')
 
-        // Je simule -> Nous simulons
-        .replace(/\bJe simule\b/g, 'Nous simulons')
-        .replace(/\bJE SIMULE\b/g, 'NOUS SIMULONS')
-        .replace(/\bje simule\b/gi, 'nous simulons')
-
-        // Je montre -> Nous montrons
-        .replace(/\bJe montre\b/g, 'Nous montrons')
-        .replace(/\bJE MONTRE\b/g, 'NOUS MONTRONS')
-        .replace(/\bje montre\b/gi, 'nous montrons')
-
-        // Je recommence -> Nous recommençons
-        .replace(/\bJe recommence\b/g, 'Nous recommençons')
-        .replace(/\bJE RECOMMENCE\b/g, 'NOUS RECOMMENÇONS')
-        .replace(/\bje RECOMMENCE\b/g, 'nous RECOMMENÇONS')
-        .replace(/\bje recommence\b/g, 'nous recommençons')
-
-
-        // Je vous montre -> Nous vous montrons
-        .replace(/\bJe vous montre\b/g, 'Nous vous montrons')
-        .replace(/\bJE VOUS MONTRE\b/g, 'NOUS VOUS MONTRONS')
-        .replace(/\bje vous montre\b/gi, 'nous vous montrons')
-
-        // Je réagis -> Nous réagissons
-        .replace(/\bJe réagis\b/g, 'Nous réagissons')
-        .replace(/\bJE RÉAGIS\b/g, 'NOUS RÉAGISSONS')
-        .replace(/\bje réagis\b/gi, 'nous réagissons')
-
-        // Mon (with spaces on either side) -> Notre
-        .replace(/\b Mon \b/g, 'Notre')
-        .replace(/\b MON \b/g, 'NOTRE')
-        .replace(/\b mon \b/g, 'notre')
-
-        // Je -> Nous
-        .replace(/\bJe\b/g, 'Nous')
-        .replace(/\bJE\b/g, 'NOUS')
-        .replace(/\bje\b/gi, 'nous')
+        // Je -> On
+        .replace(/\bJe\b/g, 'On')
+        .replace(/\bJE\b/g, 'ON')
+        .replace(/\bje\b/g, 'on')
 
         // Moi -> Nous
         .replace(/\bMoi\b/g, 'Nous')
