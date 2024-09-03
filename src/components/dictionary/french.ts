@@ -75,6 +75,13 @@ export default function (videoTitle: string, usedAsReference: boolean = false) {
         .replace(/\bJE MONTRE\b/g, 'NOUS MONTRONS')
         .replace(/\bje montre\b/gi, 'nous montrons')
 
+        // Je recommence -> Nous recommençons
+        .replace(/\bJe recommence\b/g, 'Nous recommençons')
+        .replace(/\bJE RECOMMENCE\b/g, 'NOUS RECOMMENÇONS')
+        .replace(/\bje RECOMMENCE\b/g, 'nous RECOMMENÇONS')
+        .replace(/\bje recommence\b/g, 'nous recommençons')
+
+
         // Je vous montre -> Nous vous montrons
         .replace(/\bJe vous montre\b/g, 'Nous vous montrons')
         .replace(/\bJE VOUS MONTRE\b/g, 'NOUS VOUS MONTRONS')
@@ -85,10 +92,10 @@ export default function (videoTitle: string, usedAsReference: boolean = false) {
         .replace(/\bJE RÉAGIS\b/g, 'NOUS RÉAGISSONS')
         .replace(/\bje réagis\b/gi, 'nous réagissons')
 
-        // Mon -> Notre
-        .replace(/\bMon\b/g, 'Notre')
-        .replace(/\bMON\b/g, 'NOTRE')
-        .replace(/\bmon\b/gi, 'notre')
+        // Mon (with spaces on either side) -> Notre
+        .replace(/\b Mon \b/g, 'Notre')
+        .replace(/\b MON \b/g, 'NOTRE')
+        .replace(/\b mon \b/g, 'notre')
 
         // Je -> Nous
         .replace(/\bJe\b/g, 'Nous')
